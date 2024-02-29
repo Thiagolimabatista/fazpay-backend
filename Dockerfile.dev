@@ -1,0 +1,16 @@
+FROM node:18.17.0
+
+USER node
+
+RUN mkdir -p /home/node/app
+
+WORKDIR /home/node/app
+
+COPY --chown=node:node . .
+
+RUN yarn install
+RUN yarn build
+
+ENV NODE_ENV=development
+
+CMD ["yarn", "start:dev"]  
