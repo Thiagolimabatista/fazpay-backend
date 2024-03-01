@@ -12,6 +12,7 @@ import typeorm from './config/typeorm';
 
 
 import { UsersModule } from '@components/users/users.module';
+import { ProductModule } from '@components/product/product.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { UsersModule } from '@components/users/users.module';
     }),
     ScheduleModule.forRoot(),
     UsersModule,
+    ProductModule
   ],
   controllers: [AppController],
   providers: [AppService],
